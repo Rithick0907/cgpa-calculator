@@ -1,31 +1,27 @@
 import { Table } from "react-bootstrap";
+import Select from "./SelectInput";
 
-const CustomTable = () => {
-  return (
-    <Table striped hover>
-      <thead>
-        <th>Subject Code</th>
-        <th>Subject Name</th>
-        <th>Grade</th>
-      </thead>
-      <tbody>
-        <tr>
-          <td>XC9872</td>
-          <td>TOC</td>
+const CustomTable = ({ subjects }) => (
+  <Table responsive="lg" striped hover>
+    <thead>
+      <th>Subject Code</th>
+      <th>Subject Name</th>
+      <th>Credits</th>
+      <th>Grade</th>
+    </thead>
+    <tbody>
+      {subjects.map((subject, index) => (
+        <tr key={index}>
+          <td>{subject.subjectCode}</td>
+          <td>{subject.subject}</td>
+          <td>{subject.credit}</td>
           <td>
-            <select name="grade">
-              <option value="O">O</option>
-              <option value="A+">A+</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="RA">RA</option>
-            </select>
+            <Select />
           </td>
         </tr>
-      </tbody>
-    </Table>
-  );
-};
+      ))}
+    </tbody>
+  </Table>
+);
 
 export default CustomTable;
