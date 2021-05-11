@@ -24,4 +24,5 @@ const grade = [
     value: 10,
   },
 ];
+
 export default grade;

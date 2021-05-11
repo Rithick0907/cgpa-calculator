@@ -3,6 +3,7 @@ const curriculum = [
     number: 1,
     gpa: 0.0,
     cgpa: 0.0,
+    visited: false,
     subjects: [
       {
         subject: "Communicative English",
@@ -52,6 +53,7 @@ const curriculum = [
     number: 2,
     gpa: 0.0,
     cgpa: 0.0,
+    visited: false,
     subjects: [
       {
         subject: "Technical Communication",
@@ -101,6 +103,7 @@ const curriculum = [
     number: 3,
     gpa: 0.0,
     cgpa: 0.0,
+    visited: true,
     subjects: [
       {
         subject: "Mathematics - III",
@@ -156,6 +159,7 @@ const curriculum = [
     number: 4,
     gpa: 0.0,
     cgpa: 0.0,
+    visited: false,
     subjects: [
       {
         subject: "Combinatorics and Graph Theory",
@@ -211,6 +215,7 @@ const curriculum = [
     number: 5,
     gpa: 0.0,
     cgpa: 0.0,
+    visited: false,
     subjects: [
       {
         subject: "Applied Statistics",
@@ -267,6 +272,7 @@ const curriculum = [
     number: 6,
     gpa: 0.0,
     cgpa: 0.0,
+    visited: false,
     subjects: [
       {
         subject: "Probability, Queuing Theory and Reliability",
@@ -322,6 +328,7 @@ const curriculum = [
     number: 7,
     gpa: 0.0,
     cgpa: 0.0,
+    visited: false,
     subjects: [
       {
         subject: "Industrial Project",
@@ -335,6 +342,7 @@ const curriculum = [
     number: 8,
     gpa: 0.0,
     cgpa: 0.0,
+    visited: false,
     subjects: [
       {
         subject: "Numerical Methods",
@@ -390,6 +398,7 @@ const curriculum = [
     number: 9,
     gpa: 0.0,
     cgpa: 0.0,
+    visited: false,
     subjects: [
       {
         subject: "Operations Research",
@@ -445,6 +454,7 @@ const curriculum = [
     number: 10,
     gpa: 0.0,
     cgpa: 0.0,
+    visited: false,
     subjects: [
       {
         subject: "Project Work",

@@ -1,10 +1,12 @@
 import { useState } from "react";
+import { Control } from "react-redux-form";
 import grades from "../data/grades";
 
-const SelectInput = () => {
+const SelectInput = ({ code }) => {
   const [grade, setGrade] = useState("RA");
   return (
-    <select
+    <Control.select
+      model={`.${code}`}
       value={grade}
       onChange={({ currentTarget: target }) => setGrade(target.value)}
       name="grade"
@@ -14,7 +16,7 @@ const SelectInput = () => {
           {grade}
         </option>
       ))}
-    </select>
+    </Control.select>
   );
 };
 
