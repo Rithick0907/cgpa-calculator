@@ -3,19 +3,19 @@ import { Button, Modal } from "react-bootstrap";
 import { LocalForm } from "react-redux-form";
 import Table from "./Table";
 
-const SubjectModal = ({ sem, show, subjects, onClose }) => {
+const SubjectModal = ({ semNumber, show, subjects, onClose }) => {
   return (
-    <LocalForm>
+    <LocalForm onSubmit={(val) => console.log(val)}>
       <Modal size="xl" show={show} onHide={onClose} centered>
         <Modal.Header className="font-weight-bold " closeButton>
-          Semester {sem}
+          Semester {semNumber}
         </Modal.Header>
         <Modal.Body>
-          <Table sem={sem} subjects={subjects} />
+          <Table semNumber={semNumber} subjects={subjects} />
         </Modal.Body>
         <Modal.Footer className="justify-content-center">
           <Button type="submit" variant="success" onClick={onClose}>
-            Add Marks
+            Add Grade
           </Button>
         </Modal.Footer>
       </Modal>

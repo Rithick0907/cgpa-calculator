@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Card } from "react-bootstrap";
-import { useDispatch } from "react-redux";
-import { actions } from "../store/curriculumSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { actions, selectSelectedSem } from "../store/curriculumSlice";
 import { StyledCard } from "../styles/Card.styles";
 import Modal from "./SubjectModal";
 
@@ -14,11 +14,11 @@ const CustomCard = ({ sem }) => {
   const handleClose = () => setShow(false);
   return (
     <>
-      <StyledCard onClick={() => dispatch(setSelectedSem(sem))}>
+      <StyledCard onClick={() => dispatch(setSelectedSem({ sem }))}>
         <Card.Body onClick={handleShow}>Semester {sem.number} </Card.Body>
       </StyledCard>
       <Modal
-        sem={sem.number}
+        semNumber={sem.number}
         subjects={sem.subjects}
         show={show}
         onShow={handleShow}
