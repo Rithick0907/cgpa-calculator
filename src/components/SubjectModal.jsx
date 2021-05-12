@@ -6,13 +6,16 @@ import Table from "./Table";
 const SubjectModal = ({ sem, show, subjects, onClose }) => {
   return (
     <LocalForm>
-      <Modal show={show} onHide={onClose} centered>
+      <Modal size="xl" show={show} onHide={onClose} centered>
+        <Modal.Header className="font-weight-bold " closeButton>
+          Semester {sem}
+        </Modal.Header>
         <Modal.Body>
           <Table sem={sem} subjects={subjects} />
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="danger" onClick={onClose}>
-            Close
+        <Modal.Footer className="justify-content-center">
+          <Button type="submit" variant="success" onClick={onClose}>
+            Add Marks
           </Button>
         </Modal.Footer>
       </Modal>
