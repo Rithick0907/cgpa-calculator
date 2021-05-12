@@ -3,12 +3,12 @@ import { Button, Modal } from "react-bootstrap";
 import { LocalForm } from "react-redux-form";
 import Table from "./Table";
 
-const SubjectModal = ({ show, subjects, onClose }) => {
+const SubjectModal = ({ sem, show, subjects, onClose }) => {
   return (
     <LocalForm>
       <Modal show={show} onHide={onClose} centered>
         <Modal.Body>
-          <Table subjects={subjects} />
+          <Table sem={sem} subjects={subjects} />
         </Modal.Body>
         <Modal.Footer>
           <Button variant="danger" onClick={onClose}>

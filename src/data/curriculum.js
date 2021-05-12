@@ -103,7 +103,7 @@ const curriculum = [
     number: 3,
     gpa: 0.0,
     cgpa: 0.0,
-    visited: true,
+    visited: false,
     subjects: [
       {
         subject: "Mathematics - III",

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Control } from "react-redux-form";
 import grades from "../data/grades";
 
-const SelectInput = ({ code }) => {
+const SelectInput = ({ sem, code }) => {
   const [grade, setGrade] = useState("RA");
   return (
     <Control.select

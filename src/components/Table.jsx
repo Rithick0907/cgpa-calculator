@@ -1,7 +1,7 @@
 import { Table } from "react-bootstrap";
 import Select from "./SelectInput";
 
-const CustomTable = ({ subjects }) => (
+const CustomTable = ({ sem, subjects }) => (
   <Table className="border-0" responsive="sm" hover>
     <thead>
       <th>Subject Code</th>
@@ -16,7 +16,7 @@ const CustomTable = ({ subjects }) => (
           <td>{subject.subject}</td>
           <td>{subject.credit}</td>
           <td>
-            <Select code={subject.subjectCode} />
+            <Select sem={sem} code={subject.subjectCode} />
           </td>
         </tr>
       ))}

@@ -5,8 +5,10 @@ const curriculumSlice = createSlice({
   name: "curriculum",
   initialState: curriculum,
   reducers: {
-    updateGrade: (state, payload) => {
-      state = payload.grade;
+    setSelectedSem: (state, { payload }) => {
+      for (let i of state) i.visited = false;
+      const index = state.findIndex((elem) => elem.number === payload.number);
+      state[index].visited = true;
     },
   },
 });
