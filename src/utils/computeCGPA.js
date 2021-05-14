@@ -32,7 +32,8 @@ const computeCGPA = (filteredCurriculum, dispatch) => {
       cgpa += subject.credit * getGrade(subject.grade);
     }
   }
-  cgpa = (cgpa / credits).toFixed(2);
+  cgpa /= credits;
+  cgpa = cgpa.toFixed(2);
   dispatch(actions.setCGPA({ cgpa }));
   return 1;
 };
