@@ -21,12 +21,19 @@ export const computeGPA = (sem, dispatch) => {
   dispatch(actions.setGPA({ semNumber: sem.number, gpa }));
 };
 
-const computeCGPA = (curriculum, dispatch) => {
+const computeCGPA = (filteredCurriculum, dispatch) => {
   let cgpa = 0;
   let credits = 0;
-  for (let sem of curriculum) {
-    cgpa += computeGPA(sem, dispatch);
+  for (let sem of filteredCurriculum) {
+    for (let subject of sem.subjects) {
+      if (subject.grade === "RA") continue;
+
+      credits += subject.credit;
+      cgpa += subject.credit * getGrade(subject.grade);
+    }
   }
+  cgpa = (cgpa / credits).toFixed(2);
+  dispatch(actions.setCGPA({ cgpa }));
   return 1;
 };
 

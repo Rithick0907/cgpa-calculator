@@ -32,7 +32,7 @@ const curriculumSlice = createSlice({
     setCGPA: (state, actions) => {
       const { payload } = actions;
       for (let index in state) {
-        state[index].cgpa = actions.cgpa;
+        state[index].cgpa = Number(payload.cgpa);
       }
     },
   },
@@ -48,9 +48,14 @@ export const selectSubjects = createSelector(
   (sem) => sem.subjects
 );
 
+export const selectGPA = createSelector(
+  (store) => store.curriculum,
+  (curriculum) => curriculum.filter((elem) => elem.gpa > 0)
+);
+
 export const selectCGPA = createSelector(
-  (store) => store.curriculum[0],
-  (sem) => sem.cgpa
+  (store) => store.curriculum,
+  (curriculum) => curriculum[0].cgpa
 );
 
 export const { actions } = curriculumSlice;

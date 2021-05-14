@@ -1,13 +1,12 @@
 import React from "react";
 import { Container, Col, Row } from "react-bootstrap";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import Card from "../components/Card";
 import { selectCGPA, selectCurriculum } from "../store/curriculumSlice";
-import computeCGPA from "../utils/computeCGPA";
 
 const Main = () => {
   const curriculum = useSelector(selectCurriculum);
-  let cgpa = useSelector(selectCGPA);
+  const cgpa = useSelector(selectCGPA);
 
   return (
     <>
