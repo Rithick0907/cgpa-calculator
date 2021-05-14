@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Card } from "react-bootstrap";
-import { useDispatch, useSelector } from "react-redux";
-import { actions, selectSelectedSem } from "../store/curriculumSlice";
+import { useDispatch } from "react-redux";
+import { actions } from "../store/curriculumSlice";
 import { StyledCard } from "../styles/Card.styles";
 import Modal from "./SubjectModal";
 
