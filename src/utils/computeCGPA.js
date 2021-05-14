@@ -11,6 +11,8 @@ export const computeGPA = (sem, dispatch) => {
   let gpa = 0;
   const { subjects } = sem;
   for (let subject of subjects) {
+    if (subject.grade === "RA") continue;
+
     credits += subject.credit;
     gpa += subject.credit * getGrade(subject.grade);
   }
