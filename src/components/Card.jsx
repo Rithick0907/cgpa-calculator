@@ -15,7 +15,10 @@ const CustomCard = ({ sem }) => {
   return (
     <>
       <StyledCard onClick={() => dispatch(setSelectedSem({ sem }))}>
-        <Card.Body onClick={handleShow}>Semester {sem.number} </Card.Body>
+        <Card.Body onClick={handleShow}>
+          <span>Semester {sem.number}</span>
+          <span className="d-block">GPA {sem.gpa}</span>
+        </Card.Body>
       </StyledCard>
       <Modal
         semNumber={sem.number}
