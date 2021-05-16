@@ -18,7 +18,13 @@ const IT = () => {
       <Container className="p-5" fluid>
         <Row>
           {curriculum.map((sem, index) => (
-            <Col className="my-4 px-5" key={index} sm={6} md={4} lg={3}>
+            <Col
+              className="d-flex justify-content-center my-4 px-5"
+              key={index}
+              sm={6}
+              md={4}
+              lg={3}
+            >
               <Card sem={sem} />
             </Col>
           ))}

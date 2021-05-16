@@ -9,7 +9,6 @@ const StyledApp = styled.div`
     rgba(0, 212, 255, 1) 100%
   );
   min-height: 100vh;
-  overflow: hidden;
 `;
 
 export default StyledApp;

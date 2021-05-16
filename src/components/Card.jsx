@@ -29,7 +29,9 @@ const CustomCard = (props) => {
       />
     </>
   ) : (
-    <StyledCard>
+    <StyledCard
+      onClick={() => props.history.push(`${props.course.toLowerCase()}`)}
+    >
       <Card.Body>{props.course}</Card.Body>
     </StyledCard>
   );

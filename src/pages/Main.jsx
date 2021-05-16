@@ -1,26 +1,23 @@
 import React from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
+import { useHistory } from "react-router";
+import StyledContainer from "../styles/Main.styles";
 import Card from "../components/Card";
 
-const Main = () => (
-  <Container style={{ height: "100vh" }}>
-    <Row className="h-100">
-      <Col
-        className="d-flex justify-content-center h-100 align-items-center"
-        sm={12}
-        md={6}
-      >
-        <Card course="CS" />
-      </Col>
-      <Col
-        className="d-flex justify-content-center h-100 align-items-center"
-        sm={12}
-        md={6}
-      >
-        <Card course="IT" />
-      </Col>
-    </Row>
-  </Container>
-);
+const Main = () => {
+  const history = useHistory();
+  return (
+    <StyledContainer>
+      <Row>
+        <Col sm={12} md={6}>
+          <Card history={history} course="CS" />
+        </Col>
+        <Col sm={12} md={6}>
+          <Card history={history} course="IT" />
+        </Col>
+      </Row>
+    </StyledContainer>
+  );
+};
 
 export default Main;
