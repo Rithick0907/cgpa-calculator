@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 export const StyledCard = styled(Card)`
   border-radius: 10px;
+  cursor: pointer;
   height: 150px;
   width: 200px;
 
@@ -14,8 +15,9 @@ export const StyledCard = styled(Card)`
     justify-content: center;
 
     &:hover {
-      cursor: pointer;
-      transition: 1s;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+      font-weight: bold;
     }
   }
 `;
