@@ -12,7 +12,7 @@ const CustomCard = (props) => {
 
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
-  return (
+  return props.sem ? (
     <>
       <StyledCard onClick={() => dispatch(setSelectedSem({ sem: props.sem }))}>
         <Card.Body onClick={handleShow}>
@@ -28,6 +28,10 @@ const CustomCard = (props) => {
         onClose={handleClose}
       />
     </>
+  ) : (
+    <StyledCard>
+      <Card.Body>{props.course}</Card.Body>
+    </StyledCard>
   );
 };
 

@@ -4,6 +4,7 @@ import styled from "styled-components";
 export const StyledCard = styled(Card)`
   border-radius: 10px;
   height: 150px;
+  width: 200px;
 
   .card-body {
     align-items: center;
