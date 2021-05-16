@@ -8,14 +8,18 @@ import Table from "./Table";
 
 const SubjectModal = ({ semNumber, show, subjects, onClose }) => {
   const curriculum = useSelector(selectCurriculum);
-  const filteredCurriculum = useSelector(selectGPA);
   const dispatch = useDispatch();
 
   const handleSubmit = () => {
-    const semIndex = curriculum.findIndex((elem) => elem.visited === true);
     onClose();
-    computeGPA(curriculum[semIndex], dispatch);
-    computeCGPA(filteredCurriculum, dispatch);
+    const semIndex = curriculum.findIndex((elem) => elem.visited === true);
+    dispatch((dispatch, getState) => {
+      computeGPA(curriculum[semIndex], dispatch);
+      const filteredCurriculum = getState().curriculum.filter(
+        (elem) => elem.gpa > 0
+      );
+      computeCGPA(filteredCurriculum, dispatch);
+    });
   };
 
   return (

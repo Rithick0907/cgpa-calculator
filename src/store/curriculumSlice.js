@@ -43,6 +43,11 @@ export const selectCurriculum = createSelector(
   (curriculum) => curriculum
 );
 
+export const selectedSem = createSelector(
+  (store) => store.curriculum,
+  (curriculum) => curriculum.findIndex((elem) => elem.gpa > 0)
+);
+
 export const selectSubjects = createSelector(
   (store) => store.curriculum.find((sem) => sem.visited),
   (sem) => sem.subjects
