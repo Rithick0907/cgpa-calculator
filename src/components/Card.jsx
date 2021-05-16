@@ -5,7 +5,7 @@ import { actions } from "../store/curriculumSlice";
 import { StyledCard } from "../styles/Card.styles";
 import Modal from "./SubjectModal";
 
-const CustomCard = ({ sem }) => {
+const CustomCard = (props) => {
   const [show, setShow] = useState(false);
   const dispatch = useDispatch();
   const { setSelectedSem } = actions;
@@ -14,15 +14,15 @@ const CustomCard = ({ sem }) => {
   const handleClose = () => setShow(false);
   return (
     <>
-      <StyledCard onClick={() => dispatch(setSelectedSem({ sem }))}>
+      <StyledCard onClick={() => dispatch(setSelectedSem({ sem: props.sem }))}>
         <Card.Body onClick={handleShow}>
-          <span>Semester {sem.number}</span>
-          <span className="d-block">GPA {sem.gpa}</span>
+          <span>Sem {props.sem.number}</span>
+          <span className="d-block">GPA {props.sem.gpa}</span>
         </Card.Body>
       </StyledCard>
       <Modal
-        semNumber={sem.number}
-        subjects={sem.subjects}
+        semNumber={props.sem.number}
+        subjects={props.sem.subjects}
         show={show}
         onShow={handleShow}
         onClose={handleClose}

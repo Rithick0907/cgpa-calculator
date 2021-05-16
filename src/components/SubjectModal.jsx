@@ -1,23 +1,25 @@
 import React from "react";
 import { Button, Modal } from "react-bootstrap";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { LocalForm } from "react-redux-form";
-import { selectCurriculum, selectGPA } from "../store/curriculumSlice";
 import computeCGPA, { computeGPA } from "../utils/computeCGPA";
 import Table from "./Table";
 
 const SubjectModal = ({ semNumber, show, subjects, onClose }) => {
-  const curriculum = useSelector(selectCurriculum);
   const dispatch = useDispatch();
 
   const handleSubmit = () => {
     onClose();
-    const semIndex = curriculum.findIndex((elem) => elem.visited === true);
     dispatch((dispatch, getState) => {
+      const curriculum = getState().curriculum;
+      const semIndex = curriculum.findIndex((elem) => elem.visited === true);
+
       computeGPA(curriculum[semIndex], dispatch);
+
       const filteredCurriculum = getState().curriculum.filter(
         (elem) => elem.gpa > 0
       );
+
       computeCGPA(filteredCurriculum, dispatch);
     });
   };
