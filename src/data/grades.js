@@ -1,5 +1,13 @@
 const grade = [
   {
+    grade: "SA",
+    value: 0,
+  },
+  {
+    grade: "W",
+    value: 0,
+  },
+  {
     grade: "RA",
     value: 0,
   },
