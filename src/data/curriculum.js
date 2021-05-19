@@ -203,13 +203,19 @@ const curriculum = [
         credit: 2,
         grade: "RA",
       },
-      {
-        subject: "XML and Web Services Laboratory ",
-        subjectCode: "XT7411",
+    ],
+    variation: {
+      CS: {
+        subject: "Cryptography and Data Security",
+        credit: 3,
+        grade: "RA",
+      },
+      IT: {
+        subject: "XML and Web Services Laboratory",
         credit: 2,
         grade: "RA",
       },
-    ],
+    },
   },
   {
     number: 5,
@@ -293,12 +299,6 @@ const curriculum = [
         grade: "RA",
       },
       {
-        subject: "Network Management",
-        subjectCode: "XC7601",
-        credit: 3,
-        grade: "RA",
-      },
-      {
         subject: "Environmental Science and Engineering",
         subjectCode: "GE7651",
         credit: 3,
@@ -323,6 +323,18 @@ const curriculum = [
         grade: "RA",
       },
     ],
+    variation: {
+      CS: {
+        subject: "Network Programming",
+        credit: 4,
+        grade: "RA",
+      },
+      IT: {
+        subject: "Network Management",
+        credit: 3,
+        grade: "RA",
+      },
+    },
   },
   {
     number: 7,
@@ -369,12 +381,6 @@ const curriculum = [
         grade: "RA",
       },
       {
-        subject: "Software Project Management",
-        subjectCode: "XT7852",
-        credit: 3,
-        grade: "RA",
-      },
-      {
         subject: "Algebra and Number Theory",
         subjectCode: "MA7071",
         credit: 3,
@@ -393,6 +399,18 @@ const curriculum = [
         grade: "RA",
       },
     ],
+    variation: {
+      CS: {
+        subject: "Machine Learning",
+        credit: 3,
+        grade: "RA",
+      },
+      IT: {
+        subject: "Software Project Management",
+        credit: 3,
+        grade: "RA",
+      },
+    },
   },
   {
     number: 9,
