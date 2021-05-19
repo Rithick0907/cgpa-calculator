@@ -23,15 +23,14 @@ const CustomCard = (props) => {
       <Modal
         semNumber={props.sem.number}
         subjects={props.sem.subjects}
+        subjectVariation={props.sem.variation ? props.sem.variation : ""}
         show={show}
         onShow={handleShow}
         onClose={handleClose}
       />
     </>
   ) : (
-    <StyledCard
-      onClick={() => props.history.push(`${props.course.toLowerCase()}`)}
-    >
+    <StyledCard onClick={() => props.handleClick(props.course)}>
       <Card.Body>{props.course}</Card.Body>
     </StyledCard>
   );

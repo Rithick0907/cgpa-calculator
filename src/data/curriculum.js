@@ -205,12 +205,12 @@ const curriculum = [
       },
     ],
     variation: {
-      CS: {
+      cs: {
         subject: "Cryptography and Data Security",
         credit: 3,
         grade: "RA",
       },
-      IT: {
+      it: {
         subject: "XML and Web Services Laboratory",
         credit: 2,
         grade: "RA",
@@ -324,12 +324,12 @@ const curriculum = [
       },
     ],
     variation: {
-      CS: {
+      cs: {
         subject: "Network Programming",
         credit: 4,
         grade: "RA",
       },
-      IT: {
+      it: {
         subject: "Network Management",
         credit: 3,
         grade: "RA",
@@ -400,12 +400,12 @@ const curriculum = [
       },
     ],
     variation: {
-      CS: {
+      cs: {
         subject: "Machine Learning",
         credit: 3,
         grade: "RA",
       },
-      IT: {
+      it: {
         subject: "Software Project Management",
         credit: 3,
         grade: "RA",

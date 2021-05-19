@@ -5,7 +5,13 @@ import { LocalForm } from "react-redux-form";
 import computeCGPA, { computeGPA } from "../utils/computeCGPA";
 import Table from "./Table";
 
-const SubjectModal = ({ semNumber, show, subjects, onClose }) => {
+const SubjectModal = ({
+  semNumber,
+  show,
+  subjects,
+  subjectVariation,
+  onClose,
+}) => {
   const dispatch = useDispatch();
 
   const handleSubmit = () => {
