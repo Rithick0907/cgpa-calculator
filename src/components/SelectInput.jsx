@@ -6,6 +6,7 @@ import grades from "../data/grades";
 const SelectInput = ({ grade, semNumber, subjectIndex }) => {
   const { setGrade } = actions;
   const dispatch = useDispatch();
+
   return (
     <Form.Control
       as="select"
@@ -20,6 +21,7 @@ const SelectInput = ({ grade, semNumber, subjectIndex }) => {
         )
       }
       name="grade"
+      custom
     >
       {grades.map(({ grade }, index) => (
         <option key={index} value={grade}>
