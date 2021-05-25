@@ -6,9 +6,21 @@ const curriculum = [
     visited: false,
     subjects: [
       {
+        subject: "Chemistry of Materials",
+        subjectCode: "CY7152",
+        credit: 4,
+        grade: "RA",
+      },
+      {
         subject: "Communicative English",
         subjectCode: "HS7152",
         credit: 3,
+        grade: "RA",
+      },
+      {
+        subject: "Communication Skills Laboratory",
+        subjectCode: "HS7161",
+        credit: 2,
         grade: "RA",
       },
       {
@@ -24,21 +36,9 @@ const curriculum = [
         grade: "RA",
       },
       {
-        subject: "Chemistry of Materials",
-        subjectCode: "CY7152",
-        credit: 4,
-        grade: "RA",
-      },
-      {
         subject: "Fundamentals of Computing",
         subjectCode: "XC7151",
         credit: 4,
-        grade: "RA",
-      },
-      {
-        subject: "Communication Skills Laboratory",
-        subjectCode: "HS7161",
-        credit: 2,
         grade: "RA",
       },
       {

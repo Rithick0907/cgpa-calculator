@@ -1,7 +1,6 @@
 import React from "react";
-import { Button, Modal } from "react-bootstrap";
+import { Button, Form, Modal } from "react-bootstrap";
 import { useDispatch } from "react-redux";
-import { LocalForm } from "react-redux-form";
 import computeCGPA, { computeGPA } from "../utils/computeCGPA";
 import Table from "./Table";
 
@@ -31,7 +30,7 @@ const SubjectModal = ({
   };
 
   return (
-    <LocalForm>
+    <Form>
       <Modal size="xl" show={show} onHide={onClose} centered>
         <Modal.Header className="font-weight-bold " closeButton>
           Semester {semNumber}
@@ -45,7 +44,7 @@ const SubjectModal = ({
           </Button>
         </Modal.Footer>
       </Modal>
-    </LocalForm>
+    </Form>
   );
 };
 

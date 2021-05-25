@@ -17,7 +17,6 @@ const CustomTable = ({ semNumber, subjects }) => (
           <td>{subject.credit}</td>
           <td>
             <Select
-              code={subject.subjectCode}
               grade={subject.grade}
               semNumber={semNumber}
               subjectIndex={index}

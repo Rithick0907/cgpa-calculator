@@ -1,14 +1,14 @@
+import { Form } from "react-bootstrap";
 import { useDispatch } from "react-redux";
-import { Control } from "react-redux-form";
 import { actions } from "../store/curriculumSlice";
 import grades from "../data/grades";
 
-const SelectInput = ({ code, grade, semNumber, subjectIndex }) => {
+const SelectInput = ({ grade, semNumber, subjectIndex }) => {
   const { setGrade } = actions;
   const dispatch = useDispatch();
   return (
-    <Control.select
-      model={`.${code}`}
+    <Form.Control
+      as="select"
       value={grade}
       onChange={({ currentTarget: target }) =>
         dispatch(
@@ -26,7 +26,7 @@ const SelectInput = ({ code, grade, semNumber, subjectIndex }) => {
           {grade}
         </option>
       ))}
-    </Control.select>
+    </Form.Control>
   );
 };
 
