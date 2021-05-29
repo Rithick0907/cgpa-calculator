@@ -207,11 +207,13 @@ const curriculum = [
     variation: {
       cs: {
         subject: "Cryptography and Data Security",
+        subjectCode: "XT7451",
         credit: 3,
         grade: "RA",
       },
       it: {
         subject: "XML and Web Services Laboratory",
+        subjectCode: "XT7411",
         credit: 2,
         grade: "RA",
       },
@@ -326,11 +328,13 @@ const curriculum = [
     variation: {
       cs: {
         subject: "Network Programming",
+        subjectCode: "XC7601",
         credit: 4,
         grade: "RA",
       },
       it: {
         subject: "Network Management",
+        subjectCode: "XT7601",
         credit: 3,
         grade: "RA",
       },
@@ -402,11 +406,13 @@ const curriculum = [
     variation: {
       cs: {
         subject: "Machine Learning",
+        subjectCode: "XC7851",
         credit: 3,
         grade: "RA",
       },
       it: {
         subject: "Software Project Management",
+        subjectCode: "XT7852",
         credit: 3,
         grade: "RA",
       },

@@ -16,9 +16,13 @@ const curriculumSlice = createSlice({
 
     setGrade: (state, actions) => {
       const { payload } = actions;
-      const { updatedGrade, semNumber, subjectIndex } = payload;
+      const { updatedGrade, semNumber } = payload;
       const index = state.findIndex((elem) => elem.number === semNumber);
-      state[index].subjects[subjectIndex].grade = updatedGrade;
+      if (payload.subjectIndex !== undefined) {
+        state[index].subjects[payload.subjectIndex].grade = updatedGrade;
+      } else {
+        state[index].variation[payload.course].grade = updatedGrade;
+      }
     },
 
     setGPA: (state, actions) => {

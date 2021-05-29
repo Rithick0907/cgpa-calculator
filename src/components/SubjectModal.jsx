@@ -17,15 +17,16 @@ const SubjectModal = ({
     onClose();
     dispatch((dispatch, getState) => {
       const curriculum = getState().curriculum;
+      const course = getState().course;
       const semIndex = curriculum.findIndex((elem) => elem.visited === true);
 
-      computeGPA(curriculum[semIndex], dispatch);
+      computeGPA(curriculum[semIndex], dispatch, course);
 
       const filteredCurriculum = getState().curriculum.filter(
         (elem) => elem.gpa > 0
       );
 
-      computeCGPA(filteredCurriculum, dispatch);
+      computeCGPA(filteredCurriculum, dispatch, course);
     });
   };
 
@@ -36,7 +37,11 @@ const SubjectModal = ({
           Semester {semNumber}
         </Modal.Header>
         <Modal.Body>
-          <Table semNumber={semNumber} subjects={subjects} />
+          <Table
+            semNumber={semNumber}
+            subjects={subjects}
+            subjectVariation={subjectVariation}
+          />
         </Modal.Body>
         <Modal.Footer className="justify-content-center">
           <Button onClick={handleSubmit} type="submit" variant="success">

@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { actions } from "../store/curriculumSlice";
 import grades from "../data/grades";
 
-const SelectInput = ({ grade, semNumber, subjectIndex }) => {
+const SelectInput = ({ grade, semNumber, ...otherProps }) => {
   const { setGrade } = actions;
   const dispatch = useDispatch();
 
@@ -16,7 +16,7 @@ const SelectInput = ({ grade, semNumber, subjectIndex }) => {
           setGrade({
             updatedGrade: target.value,
             semNumber: semNumber,
-            subjectIndex,
+            ...otherProps,
           })
         )
       }

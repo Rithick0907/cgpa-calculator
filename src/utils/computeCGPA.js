@@ -1,49 +1,60 @@
 import { actions } from "../store/curriculumSlice";
 import grades from "../data/grades";
 
+const checkInvalidGrade = (subject) =>
+  subject.grade === "RA" || subject.grade === "SA" || subject.grade === "W";
+
 const getGrade = (grade) => {
   const gradeObj = grades.find((elem) => elem.grade === grade);
   return gradeObj.value;
 };
 
-export const computeGPA = (sem, dispatch) => {
-  let credits = 0;
-  let gpa = 0;
-  const { subjects } = sem;
-  for (let subject of subjects) {
-    if (
-      subject.grade === "RA" ||
-      subject.grade === "SA" ||
-      subject.grade === "W"
-    )
-      continue;
-
-    credits += subject.credit;
-    gpa += subject.credit * getGrade(subject.grade);
-  }
-  gpa /= credits;
-  gpa = gpa.toFixed(2);
-  dispatch(actions.setGPA({ semNumber: sem.number, gpa }));
+const computeAverage = (total, credits) => {
+  const avg = total / credits;
+  return avg.toFixed(2);
 };
 
-const computeCGPA = (filteredCurriculum, dispatch) => {
+export const computeGPA = (sem, dispatch, { courseName: course }) => {
+  let credits = 0;
+  let gpa = 0;
+  let total = 0;
+  const { subjects } = sem;
+
+  for (let subject of subjects) {
+    if (checkInvalidGrade(subject)) continue;
+
+    credits += subject.credit;
+    total += subject.credit * getGrade(subject.grade);
+  }
+  if (sem.variation !== undefined && checkInvalidGrade(sem.variation[course])) {
+    const subject = sem.variation[course];
+
+    credits += subject.credit;
+    total += subject.credit * getGrade(subject.grade);
+  }
+
+  gpa = computeAverage(gpa, credits);
+
+  if (dispatch) dispatch(actions.setGPA({ semNumber: sem.number, gpa }));
+
+  return {
+    total,
+    credits,
+  };
+};
+
+const computeCGPA = (filteredCurriculum, dispatch, { courseName: course }) => {
   let cgpa = 0;
   let credits = 0;
-  for (let sem of filteredCurriculum) {
-    for (let subject of sem.subjects) {
-      if (
-        subject.grade === "RA" ||
-        subject.grade === "SA" ||
-        subject.grade === "W"
-      )
-        continue;
 
-      credits += subject.credit;
-      cgpa += subject.credit * getGrade(subject.grade);
-    }
+  for (let sem of filteredCurriculum) {
+    let result = computeGPA(sem, false, course);
+    cgpa += result.total;
+    credits += result.credits;
   }
-  cgpa /= credits;
-  cgpa = cgpa.toFixed(2);
+
+  cgpa = computeAverage(cgpa, credits);
+
   dispatch(actions.setCGPA({ cgpa }));
   return 1;
 };
