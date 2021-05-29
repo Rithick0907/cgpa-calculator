@@ -19,6 +19,7 @@ export const computeGPA = (sem, dispatch, { courseName: course }) => {
   let gpa = 0;
   let total = 0;
   const { subjects, variation } = sem;
+
   for (let subject of subjects) {
     if (checkInvalidGrade(subject)) continue;
 
@@ -26,13 +27,11 @@ export const computeGPA = (sem, dispatch, { courseName: course }) => {
     total += subject.credit * getGrade(subject.grade);
   }
 
-  if (variation) {
+  if (variation && !checkInvalidGrade(variation[course])) {
     const subject = variation[course];
 
-    if (subject && !checkInvalidGrade(subject)) {
-      credits += subject.credit;
-      total += subject.credit * getGrade(subject.grade);
-    }
+    credits += subject.credit;
+    total += subject.credit * getGrade(subject.grade);
   }
 
   gpa = computeAverage(total, credits);
@@ -43,11 +42,10 @@ export const computeGPA = (sem, dispatch, { courseName: course }) => {
   };
 };
 
-const computeCGPA = (filteredCurriculum, dispatch, { courseName: course }) => {
+const computeCGPA = (filteredCurriculum, dispatch, course) => {
   let cgpa = 0;
   let credits = 0;
   for (let sem of filteredCurriculum) {
-    console.log(sem);
     let result = computeGPA(sem, false, course);
     cgpa += result.total;
     credits += result.credits;
