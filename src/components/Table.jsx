@@ -1,10 +1,10 @@
+import { useContext } from "react";
 import { Table } from "react-bootstrap";
-import { useSelector } from "react-redux";
 import Select from "./SelectInput";
-import { selectCourse } from "../store/courseSlice";
+import CourseContext from "../context/courseContext";
 
 const CustomTable = ({ semNumber, subjects, subjectVariation }) => {
-  const course = useSelector(selectCourse);
+  const { course } = useContext(CourseContext);
   const variation = subjectVariation ? subjectVariation[course] : null;
 
   return (

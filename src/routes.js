@@ -1,5 +1,5 @@
 import MainPage from "./pages/Main";
-import Landing from "./pages/Landing";
+import Calculator from "./pages/Calculator";
 
 const routes = [
   {
@@ -10,7 +10,7 @@ const routes = [
   {
     name: "course",
     path: "/course/:courseName",
-    component: Landing,
+    component: Calculator,
   },
 ];
 

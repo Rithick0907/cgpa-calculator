@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
 import { useDispatch } from "react-redux";
-import computeCGPA, { computeGPA } from "../utils/computeCGPA";
 import Table from "./Table";
+import CourseContext from "../context/courseContext";
+import computeCGPA, { computeGPA } from "../utils/computeCGPA";
 
 const SubjectModal = ({
   semNumber,
@@ -12,12 +13,12 @@ const SubjectModal = ({
   onClose,
 }) => {
   const dispatch = useDispatch();
+  const { course } = useContext(CourseContext);
 
   const handleSubmit = () => {
     onClose();
     dispatch((dispatch, getState) => {
       const curriculum = getState().curriculum;
-      const course = getState().course;
       const semIndex = curriculum.findIndex((elem) => elem.visited === true);
 
       computeGPA(curriculum[semIndex], dispatch, course);
