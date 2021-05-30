@@ -1,6 +1,5 @@
 import MainPage from "./pages/Main";
-import CSPage from "./pages/CS";
-import ITPage from "./pages/IT";
+import Landing from "./pages/Landing";
 
 const routes = [
   {
@@ -9,14 +8,9 @@ const routes = [
     component: MainPage,
   },
   {
-    name: "CS",
-    path: "/cs",
-    component: CSPage,
-  },
-  {
-    name: "IT",
-    path: "/it",
-    component: ITPage,
+    name: "course",
+    path: "/course/:courseName",
+    component: Landing,
   },
 ];
 
