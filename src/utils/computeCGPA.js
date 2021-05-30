@@ -1,7 +1,7 @@
 import { actions } from "../store/curriculumSlice";
 import grades from "../data/grades";
 
-const checkInvalidGrade = (subject) =>
+const isInvalid = (subject) =>
   subject.grade === "RA" || subject.grade === "SA" || subject.grade === "W";
 
 const getGrade = (grade) => {
@@ -14,20 +14,21 @@ const computeAverage = (total, credits) => {
   return avg.toFixed(2);
 };
 
-export const computeGPA = (sem, dispatch, { courseName: course }) => {
+export const computeGPA = (sem, dispatch, course) => {
   let credits = 0;
   let gpa = 0;
   let total = 0;
   const { subjects, variation } = sem;
 
   for (let subject of subjects) {
-    if (checkInvalidGrade(subject)) continue;
+    if (isInvalid(subject)) continue;
 
     credits += subject.credit;
     total += subject.credit * getGrade(subject.grade);
   }
 
-  if (variation && !checkInvalidGrade(variation[course])) {
+  console.log(variation);
+  if (variation) {
     const subject = variation[course];
 
     credits += subject.credit;
