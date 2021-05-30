@@ -12,7 +12,7 @@ const Main = () => {
 
   const handleClick = (courseName) => {
     courseName = courseName.toLowerCase();
-    history.push(`${courseName}`);
+    history.push(`course/${courseName}`);
     dispatch(setCourse({ courseName }));
   };
 
