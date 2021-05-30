@@ -1,13 +1,17 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
+import { useDispatch } from "react-redux";
 import { useHistory } from "react-router";
-import StyledContainer from "../styles/Main.styles";
 import Card from "../components/Card";
+import { actions } from "../store/curriculumSlice";
+import StyledContainer from "../styles/Main.styles";
 
 const Main = () => {
+  const dispatch = useDispatch();
   const history = useHistory();
 
   const handleClick = (courseName) => {
+    dispatch(actions.resetCurriculum());
     courseName = courseName.toLowerCase();
     history.push(`course/${courseName}`);
   };

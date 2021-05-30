@@ -39,6 +39,10 @@ const curriculumSlice = createSlice({
         state[index].cgpa = Number(payload.cgpa);
       }
     },
+
+    resetCurriculum: (state) => {
+      Object.assign(state, curriculum);
+    },
   },
 });
 
