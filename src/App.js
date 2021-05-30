@@ -5,15 +5,15 @@ import StyledApp from "./styles/App.styles";
 
 const App = () => {
   const getRoutes = () =>
-    routes.map((route, index) => (
-      <Route key={index} path={route.path} component={route.component} />
+    routes.map(({ component, ...otherProps }, index) => (
+      <Route key={index} component={component} {...otherProps} />
     ));
 
   return (
     <StyledApp>
       <Switch>
         {getRoutes()}
-        <Redirect to="/main" />
+        <Redirect to="/course" />
       </Switch>
     </StyledApp>
   );

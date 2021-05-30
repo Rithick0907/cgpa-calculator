@@ -27,7 +27,6 @@ export const computeGPA = (sem, dispatch, course) => {
     total += subject.credit * getGrade(subject.grade);
   }
 
-  console.log(variation);
   if (variation) {
     const subject = variation[course];
 

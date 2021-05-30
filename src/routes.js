@@ -3,9 +3,10 @@ import Calculator from "./pages/Calculator";
 
 const routes = [
   {
-    name: "main",
-    path: "/main",
+    name: "course",
+    path: "/course",
     component: MainPage,
+    exact: true,
   },
   {
     name: "course",
