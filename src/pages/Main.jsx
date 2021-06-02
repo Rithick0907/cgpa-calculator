@@ -1,7 +1,7 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
 import { useDispatch } from "react-redux";
-import { useHistory } from "react-router";
+import { useHistory, useLocation } from "react-router";
 import Card from "../components/Card";
 import { actions } from "../store/curriculumSlice";
 import StyledContainer from "../styles/Main.styles";
