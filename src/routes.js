@@ -3,14 +3,14 @@ import Calculator from "./pages/Calculator";
 
 const routes = [
   {
-    name: "course",
-    path: "/course",
+    name: "cgpa-calculator",
+    path: "/cgpa-calculator",
     component: MainPage,
     exact: true,
   },
   {
-    name: "course",
-    path: "/course/:courseName",
+    name: "cgpa-calculator",
+    path: "/cgpa-calculator/:courseName",
     component: Calculator,
   },
 ];
