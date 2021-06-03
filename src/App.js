@@ -13,7 +13,7 @@ const App = () => {
     <StyledApp>
       <Switch>
         {getRoutes()}
-        <Redirect to="/course" />
+        <Redirect to="/cgpa-calculator" />
       </Switch>
     </StyledApp>
   );

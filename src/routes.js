@@ -9,8 +9,8 @@ const routes = [
     exact: true,
   },
   {
-    name: "cgpa-calculator",
-    path: "/cgpa-calculator/:courseName",
+    name: "course",
+    path: "/course/:courseName",
     component: Calculator,
   },
 ];
