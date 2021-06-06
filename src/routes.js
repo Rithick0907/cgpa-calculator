@@ -10,7 +10,7 @@ const routes = [
   },
   {
     name: "course",
-    path: "/course/:courseName",
+    path: "/cgpa-calculator/:courseName",
     component: Calculator,
   },
 ];

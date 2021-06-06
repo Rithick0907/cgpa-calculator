@@ -13,7 +13,7 @@ const Main = () => {
   const handleClick = (courseName) => {
     dispatch(actions.resetCurriculum());
     courseName = courseName.toLowerCase();
-    history.push(`course/${courseName}`);
+    history.push(`cgpa-calculator/${courseName}`);
   };
 
   return (
