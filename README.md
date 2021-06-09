@@ -1,70 +1,25 @@
-# Getting Started with Create React App
+# CGPA Calculator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+CGPA Calculator is a web application used to calculate GPA and CGPA for M.Sc. Integrated(5 yrs) Students in College Of Engineering, Guindy. This application is build using React JS with Redux.
 
-## Available Scripts
+## How to run the app
+1. Either Fork or Clone this project and open the folder in CLI.
+2. Install all the dependencies using the `npm install` command.
+3. Start the development Server using `npm start` command. The app will be served at http://localhost:8080/.
+4. Go ot  http://localhost:8080/ in your browser and start use this app.
 
-In the project directory, you can run:
+## How to calculate gpa and cgpa
+1. Select your course (CS or IT) in the Main Page.
+2. Select the Semester you want to calculate GPA and CGPA.
+3. Enter your grades in that semester subjects and Click Add Grade.
+4. After adding your grades, your CGPA will be displayed at the top of the page.
+5. Your GPA for specific semester is displayed in that Semester Card itself.
 
-### `npm start`
+## How the app look like
+![Capture 1](https://user-images.githubusercontent.com/49742736/121368186-81633680-c958-11eb-96f4-63beae86aa2c.PNG)
+![Capture 2](https://user-images.githubusercontent.com/49742736/121368279-950e9d00-c958-11eb-8de4-47d3b7683481.PNG)
+![Screenshot (3)](https://user-images.githubusercontent.com/49742736/121368431-b2436b80-c958-11eb-9d3b-a8cc1ce6ec9f.png)
+![Capture 3](https://user-images.githubusercontent.com/49742736/121368528-c2f3e180-c958-11eb-907e-a43a2ceaf2aa.PNG)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This application is available in [https://rithick0907.github.io/cgpa-calculator/](https://rithick0907.github.io/cgpa-calculator/)
