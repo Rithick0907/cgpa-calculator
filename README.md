@@ -1,7 +1,7 @@
 # CGPA Calculator
 
 CGPA Calculator is a web application used to calculate GPA and CGPA for M.Sc. Integrated(5 yrs) Students in College Of Engineering, Guindy.  
-Tech Stack: React JS, Redux.  
+Tech Stack: React JS, React-Bootstrap, Redux.  
 Visit this application at [https://rithick0907.github.io/cgpa-calculator/](https://rithick0907.github.io/cgpa-calculator/)
 
 ## Setup and run the app
