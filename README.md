@@ -3,7 +3,7 @@
 CGPA Calculator is a web application used to calculate GPA and CGPA for M.Sc. Integrated(5 yrs) Students in College Of Engineering, Guindy. 
 Tech Stack: React JS, Redux.
 
-## How to run the app
+## Setup and run the app
 1. Either Fork or Clone this project and open the folder in CLI.
 2. Install all the dependencies using the `npm install` command.
 3. Start the development Server using `npm start` command. The app will be served at http://localhost:8080/.
