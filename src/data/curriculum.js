@@ -381,7 +381,7 @@ const curriculum = [
       {
         subject: "Cloud Computing",
         subjectCode: "XT7851",
-        credit: 3,
+        credit: 4,
         grade: "RA",
       },
       {
